@@ -45,4 +45,15 @@ class Solution {
 
 /*
 Explanation
+Create a new list called result to store the spiral order of elements in the matrix.
+Check if the given matrix is empty or invalid (null, 0 rows, or 0 columns). If so, return the empty result list.
+Initialize four variables: srow (start row), scol (start column), erow (end row), and ecol (end column). These variables represent the boundaries of the current layer in the matrix that we will traverse.
+Use a while loop to continue traversing the matrix while the start row is less than or equal to the end row and the start column is less than or equal to the end column. This condition ensures that there are still elements to be traversed in the matrix.
+Traverse the top row from left to right by iterating over the elements in the scol to ecol range. Add each element to the result list.
+Traverse the right column from top to bottom by iterating over the elements in the srow + 1 to erow range. Add each element to the result list.
+Traverse the bottom row from right to left if the start row is not equal to the end row. This condition is added to avoid traversing the same row again in the case of odd dimensions. Iterate over the elements in the ecol - 1 to scol range and add each element to the result list.
+Traverse the left column from bottom to top if the start column is not equal to the end column. This condition is added to avoid traversing the same column again in the case of odd dimensions. Iterate over the elements in the erow - 1 to srow + 1 range and add each element to the result list.
+Update the boundary variables: increment srow and scol, and decrement erow and ecol. This indicates that we have completed traversing the current layer and we move to the next inner layer.
+Repeat steps 5-9 until all elements in the matrix are traversed.
+Return the result list containing the spiral order of elements in the matrix.
 */
